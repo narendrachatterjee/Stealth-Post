@@ -6,7 +6,6 @@ const { Message } = require('../models/message');
 router.get('/retrieve', async (req, res) => {
   try {
     const messages = await Message.find();
-    console.log(messages);
     res.json(messages);
   } catch (error) {
     res.status(500).json({ message: error.message });
@@ -16,7 +15,6 @@ router.get('/retrieve', async (req, res) => {
 // POST a message
 router.post('/post', async (req, res) => {
 	const {content, sender} = req.body;
-  console.log("sender"+sender);
 
     const newMessageData = {
         content, sender
