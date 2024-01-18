@@ -21,6 +21,8 @@ router.post("/signup", async (req, res) => {
 			firstName,
 			lastName
 		};
+		
+		
 		const newUser = await User.create(newUserData);
 
 		const Token = await getToken(Email,newUser);
@@ -30,7 +32,7 @@ router.post("/signup", async (req, res) => {
 		res.status(200).json(userToReturn);
 
 	} catch (error) {
-		res.status(500).send({ message: "Internal Server Error" });
+		res.status(500).send({ message: "Internal Server Error  "+error });
 	}
 });
 
@@ -76,7 +78,7 @@ router.get("/login/success", (req,res) => {
 });
 
 
-router.get("/google",passport.authenticate("google",["profile","email"]));
+/*router.get("/google",passport.authenticate("google",["profile","email"]));
 
 router.get(
 	"/google/callback",
@@ -123,7 +125,7 @@ router.post("/forgotPassword", async (req,res)=>{
 		res.status(500).json({ error: 'Internal server error' });
 	  }
 	
-});
+});*/
 
 
 module.exports = router;
