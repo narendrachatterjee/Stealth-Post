@@ -1,6 +1,7 @@
 
 export const makeUnauthenticatedPostRequest = async (route,body) =>{
     try{
+        console.log(process.env.backendUrl);
         const response = await fetch(process.env.backendUrl +""+ route, {
             method : "POST",
             headers:{
