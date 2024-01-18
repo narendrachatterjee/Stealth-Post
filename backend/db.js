@@ -15,7 +15,7 @@ module.exports = ()=>{
             console.log("Connected to Mongo!");
         })
         .catch((err) => {
-            console.log(process.env.mongoPassword);
-            console.log("Error in connecting to Mongo!"+err);
+            console.log("print"+process.env.mongoPassword);
+            console.log("Error in connecting to Mongo! "+err);
         });
 }
