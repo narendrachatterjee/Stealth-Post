@@ -1,8 +1,8 @@
+import {backendUrl} from "./config";
 
 export const makeUnauthenticatedPostRequest = async (route,body) =>{
     try{
-        console.log("url"+process.env.backendUrl);
-        const response = await fetch(process.env.backendUrl +""+ route, {
+        const response = await fetch(backendUrl +""+ route, {
             method : "POST",
             headers:{
                 "Content-Type": "application/json",
@@ -22,7 +22,7 @@ export const makeUnauthenticatedPostRequest = async (route,body) =>{
 
 export const makeUnauthenticatedGetRequest = async (route) =>{
     try{
-        const response = await fetch(process.env.backendUrl +""+ route, {
+        const response = await fetch(backendUrl +""+ route, {
             method : "GET",
             headers:{
                 "Content-Type": "application/json",
@@ -40,7 +40,7 @@ export const makeUnauthenticatedGetRequest = async (route) =>{
 
 export const makeForgotPasswordRequest = async (route,body) =>{
     try{
-        const response = await fetch(process.env.backendUrl +""+ route, {
+        const response = await fetch(backendUrl +""+ route, {
             method : "POST",
             headers:{
                 "Content-Type": "application/json",
