@@ -3,10 +3,7 @@ const mongoose = require("mongoose");
 module.exports = ()=>{
     mongoose
         .connect(
-            "mongodb+srv://"process.env.mongoUsername+":" +
-                process.env.mongoPassword +
-                "@cluster0.ganwmr2.mongodb.net/?retryWrites=true&w=majority",
-            
+            process.env.mongoConnectionString,            
             {
                 useNewUrlParser: true,
                 useUnifiedTopology: true,
