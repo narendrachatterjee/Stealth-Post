@@ -3,13 +3,9 @@ const mongoose = require("mongoose");
 module.exports = ()=>{
     mongoose
         .connect(
-          //  "mongodb+srv://narendrachatterjee:" +
-            //    process.env.mongoPassword +
-              //  "@cluster0.ganwmr2.mongodb.net/?retryWrites=true&w=majority",
-
-                "mongodb+srv://narendrachatterjee:"+
-                    process.env.mongoPassword+
-                        "@cluster0.ganwmr2.mongodb.net/",
+            "mongodb+srv://process.env.mongoUsername:" +
+                process.env.mongoPassword +
+                "@cluster0.ganwmr2.mongodb.net/?retryWrites=true&w=majority",
             
             {
                 useNewUrlParser: true,
