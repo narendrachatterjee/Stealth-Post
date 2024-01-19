@@ -10,7 +10,7 @@ const Home = () => {
     const [data, setData] = useState([]);
 
     // Connect to WebSocket server
-    const socket = io('http://localhost:3000'); // Change the URL based on your server setup
+    const socket = io('https://stealthpost.netlify.app'); // Change the URL based on your server setup
 
     const fetchData = async () => {
         try {
